@@ -3,19 +3,6 @@
 import React, { Component } from 'react';
 
 export default class SearchBar extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: ''
-    };
-  }
-
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    });
-  }
-
   render() {
     return (
       <input
@@ -27,3 +14,5 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+/* Fin! */
