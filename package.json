@@ -1,0 +1,27 @@
+{
+  "name": "contact-list-starter",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.14.0",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-react": "^6.9.0",
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "foreman": "^2.0.0",
+    "json-server": "^0.9.4",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "nf start",
+    "lint": "eslint src",
+    "react-app": "react-scripts start",
+    "api": "json-server --id _id --watch --port 4000 db.json",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
