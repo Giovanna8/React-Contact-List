@@ -62,7 +62,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} />
-        <ContactList contacts={this.state.contacts} />
+        <ContactList contacts={this.getFilteredContacts()} />
       </div>
     );
   }

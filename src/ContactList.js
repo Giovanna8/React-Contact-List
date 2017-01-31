@@ -1,19 +1,24 @@
 /* eslint max-len: ["error", 1000]*/
-import React from 'react';
+import React, {Component} from 'react';
+import Contact from './Contact';
 
-const Contact = props => {
-  return (
-    <li className="contact">
-      <div className="image-cropper">
-        <img src={props.avatar} alt="avatar" />
-      </div>
-      <div className="contact-info">
-        <h2>{props.name}</h2>
-        {props.occupation}
-      </div>
-    </li>
-  );
-};
-
+export default class ContactList extends Component {
+  render() {
+    return (
+      <ul className="contact-list">
+        {this.props.contacts.map(contact => {
+          return (
+            <Contact
+              key={contact._id}
+              name={contact.name}
+              avatar={contact.avatar}
+              occupation={contact.occupation}
+            />
+          );
+        })}
+      </ul>
+    );
+  }
+}
 
 /* Fin! */
