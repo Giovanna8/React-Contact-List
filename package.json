@@ -10,6 +10,7 @@
     "react-scripts": "0.7.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "foreman": "^2.0.0",
     "json-server": "^0.9.4",
     "react": "^15.3.2",
