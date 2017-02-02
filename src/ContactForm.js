@@ -1,6 +1,5 @@
 /* eslint max-len: ["error", 1000] */
 
-
 import React, { Component } from 'react';
 
 export default class ContactForm extends Component {
@@ -39,6 +38,12 @@ export default class ContactForm extends Component {
     this.props.onSubmit({ name, avatar, occupation });
   }
 
+  handleInputChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
   render() {
     return (
       <form className="new-contact-form" onSubmit={this.handleSubmit.bind(this)}>
@@ -54,7 +59,7 @@ export default class ContactForm extends Component {
         <input
           type="text"
           name="occupation"
-          value="this.state.occupation"
+          value={this.state.occupation}
           onChange={this.handleOccupationChange.bind(this)}
         />
 

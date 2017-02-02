@@ -16,5 +16,3 @@ export default class Contact extends Component {
     );
   }
 }
-
-/* Fin! */

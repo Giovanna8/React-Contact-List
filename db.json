@@ -29,6 +29,24 @@
       "name": "Dana Scully",
       "occupation": "FBI Agent",
       "avatar": "https://pbs.twimg.com/profile_images/718881904834056192/WnMTb__R.jpg"
+    },
+    {
+      "name": "Sterling Archer",
+      "avatar": "http://i.imgur.com/i81OkNq.png",
+      "occupation": "world's greatest secret agent turned private detective",
+      "_id": 6
+    },
+    {
+      "name": "Sterling Archer",
+      "avatar": "http://i.imgur.com/i81OkNq.png",
+      "occupation": "world's greatest private detective",
+      "_id": 7
+    },
+    {
+      "name": "Lana Kane",
+      "avatar": "http://i.imgur.com/jQlV072.jpg",
+      "occupation": "stunningly beautiful and extremely deadly",
+      "_id": 8
     }
   ]
 }

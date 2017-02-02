@@ -20,5 +20,3 @@ export default class ContactList extends Component {
     );
   }
 }
-
-/* Fin! */
