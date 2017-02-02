@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import ContactList from './ContactList';
 import SearchBar from './SearchBar';
+import ContactForm from './ContactForm';
 import axios from 'axios';
 
 export default class App extends Component {
@@ -48,16 +49,15 @@ export default class App extends Component {
 
   componentDidMount() {
     axios.get('http://localhost:4000/contacts')
-    .then(resp => {
-      this.setState({
-        contacts: resp.data
+      .then(resp => {
+        this.setState({
+          contacts: resp.data
+        });
       })
-    })
-    .catch(err => {
-      console.log('Error! ${err}');
-    });
+      .catch(err => console.log('Error! ${err}'));
+  }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState({
       searchText: event.target.value
     });
@@ -76,11 +76,37 @@ export default class App extends Component {
     });
   }
 
+  handleAddContact(attributes) {
+    axios.post('http://localhost:4000/contacts', attributes)
+      .then(resp => {
+        this.setState({
+          contacts: [
+            this.state.contacts,
+            resp.data
+          ]
+        });
+      })
+      .catch(err => console.log('err'));
+  }
+
+  handleDeleteContact(_id) {
+    axios.delete('http://localhost:4000/contacts/${_id}')
+      .then(resp => {
+        const newContacts = this.state.contacts.filter(contact => contact._id !== _id);
+
+        this.setState({
+          contacts: newContacts
+        });
+      })
+      .catch(err => console.log('Error!! ${err}'));
+  }
+
   render() {
     return (
       <div className="App">
         <SearchBar value={this.state.searchText} onChange={this.handleChange.bind(this)} />
         <ContactList contacts={this.getFilteredContacts()} />
+        <ContactForm onSubmit={this.handleAddContact.bind(this)} />
       </div>
     );
   }
